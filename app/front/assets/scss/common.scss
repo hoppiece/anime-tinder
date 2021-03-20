@@ -12,10 +12,19 @@
     color: white;
 }
 
-// 全画面のラッパー
+
+.horizontal-gradient-reverse {
+    background: linear-gradient(to left, $main-orange, $main-pink);
+    color: white;
+}
+
+// 全画面
 .box {
-    width: 100vw;
+    width: 120vw;
     height: 100vh;
     display: flex;
     justify-content: center;
+    margin-top: -60px;
+    margin-left: -50px;
+
 }

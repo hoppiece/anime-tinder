@@ -3,8 +3,8 @@
     <Loading v-show="loading"></Loading>
     <div class="box home-background" v-show="!loading">
       <VueTinder
-        key-name="id" 
-        :queue.sync="animequeue" 
+        key-name="id"
+        :queue.sync="animequeue"
         @submit="onSort"
         ref="tinder"
       >
@@ -41,7 +41,7 @@ import ResultButton from '@/components/ResultButton';
 import VueTinder from 'vue-tinder';
 
 export default {
-  middleware: 'authenticated',
+  //middleware: 'authenticated',
   components: {
     Loading,
     NopeButton,
@@ -54,7 +54,7 @@ export default {
     return {
       name: 'index',
       // これから選別されるアニメ
-      animequeue: [], 
+      animequeue: [],
       // 仕分けされたアニメ
       animesorted: [],
       loading: false,
@@ -91,7 +91,7 @@ export default {
       // カードをめくる
       this.$refs.tinder.decide(choice, id);
     },
-  
+
     // フリック
     onSort: function (choice, id) {
       switch (choice) {
@@ -114,50 +114,50 @@ export default {
     getData () {
       const list = [
         {
-          "company": "MAPPA", 
-          "description": "人間の負の感情から生まれる化け物・呪霊を呪術を使って祓う呪術師の闘いを描いた、ダークファンタジー・バトル漫画。", 
-          "genre": "カテゴリ1", 
-          "id": 1, 
-          "image": "https://pbs.twimg.com/media/Epkl6M8VoAAGZAP.jpg", 
-          "title": "呪術廻戦", 
+          "company": "MAPPA",
+          "description": "人間の負の感情から生まれる化け物・呪霊を呪術を使って祓う呪術師の闘いを描いた、ダークファンタジー・バトル漫画。",
+          "genre": "カテゴリ1",
+          "id": 1,
+          "image": "https://pbs.twimg.com/media/Epkl6M8VoAAGZAP.jpg",
+          "title": "呪術廻戦",
           "year": "2020秋"
         },
         {
-          "company": "ufotable", 
-          "description": "大正時代を舞台に主人公が鬼と化した妹を人間に戻す方法を探すために戦う姿を描く和風剣戟奇譚", 
-          "genre": "剣劇 ダーク・ファンタジー", 
-          "id": 2, 
-          "image": "https://animeanime.jp/imgs/p/jtKDOVlKAvjRrNw8SXAVejagI61Nrq_oqaqr/359929.jpg", 
-          "title": "五等分の花嫁", 
+          "company": "ufotable",
+          "description": "大正時代を舞台に主人公が鬼と化した妹を人間に戻す方法を探すために戦う姿を描く和風剣戟奇譚",
+          "genre": "剣劇 ダーク・ファンタジー",
+          "id": 2,
+          "image": "https://animeanime.jp/imgs/p/jtKDOVlKAvjRrNw8SXAVejagI61Nrq_oqaqr/359929.jpg",
+          "title": "五等分の花嫁",
           "year": "2019"
-        }, 
+        },
         {
-          "company": "MAPPA", 
-          "description": "人間の負の感情から生まれる化け物・呪霊を呪術を使って祓う呪術師の闘いを描いた、ダークファンタジー・バトル漫画。", 
-          "genre": "ダーク・ファンタジー", 
-          "id": 3, 
-          "image": "https://eiga.k-img.com/images/anime/news/112498/photo/a8c42bc0e5f54dc2/320.jpg?1607668254", 
-          "title": "リゼロ", 
+          "company": "MAPPA",
+          "description": "人間の負の感情から生まれる化け物・呪霊を呪術を使って祓う呪術師の闘いを描いた、ダークファンタジー・バトル漫画。",
+          "genre": "ダーク・ファンタジー",
+          "id": 3,
+          "image": "https://eiga.k-img.com/images/anime/news/112498/photo/a8c42bc0e5f54dc2/320.jpg?1607668254",
+          "title": "リゼロ",
           "year": "2020冬"
         },
         {
-          "company": "ProductionI.G", 
-          "description": "Production I.G制作による日本のオリジナルテレビアニメ作品、および、これを原作としたメディアミックス作品。", 
-          "genre": "SF アクション クライムサスペンス", 
-          "id": 4, 
-          "image": "https://dengekionline.com/images/U6Eo/iVNf/gAfD/JWlv/Vkjtk62p9OOmOlk5ovvHfnSD7BsrhFp0IYEPVWKXQjNE4bjLhjQ2ETa8nvAKQkPdow0ld9prCOr91ahW.jpg", 
-          "title": "PSYCHO-PASS サイコパス 3", 
+          "company": "ProductionI.G",
+          "description": "Production I.G制作による日本のオリジナルテレビアニメ作品、および、これを原作としたメディアミックス作品。",
+          "genre": "SF アクション クライムサスペンス",
+          "id": 4,
+          "image": "https://dengekionline.com/images/U6Eo/iVNf/gAfD/JWlv/Vkjtk62p9OOmOlk5ovvHfnSD7BsrhFp0IYEPVWKXQjNE4bjLhjQ2ETa8nvAKQkPdow0ld9prCOr91ahW.jpg",
+          "title": "PSYCHO-PASS サイコパス 3",
           "year": "2019秋"
-        }, 
+        },
         {
-          "company": "ufotable", 
-          "description": "大正時代を舞台に主人公が鬼と化した妹を人間に戻す方法を探すために戦う姿を描く和風剣戟奇譚", 
-          "genre": "剣劇 ダーク・ファンタジー", 
-          "id": 5, 
-          "image": "https://animeanime.jp/imgs/p/jtKDOVlKAvjRrNw8SXAVejagI61Nrq_oqaqr/359929.jpg", 
-          "title": "鬼滅の刃", 
+          "company": "ufotable",
+          "description": "大正時代を舞台に主人公が鬼と化した妹を人間に戻す方法を探すために戦う姿を描く和風剣戟奇譚",
+          "genre": "剣劇 ダーク・ファンタジー",
+          "id": 5,
+          "image": "https://animeanime.jp/imgs/p/jtKDOVlKAvjRrNw8SXAVejagI61Nrq_oqaqr/359929.jpg",
+          "title": "鬼滅の刃",
           "year": "2019"
-        }, 
+        },
       ];
       // 5件変更
       this.animequeue = this.animequeue.concat(list);

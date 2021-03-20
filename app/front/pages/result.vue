@@ -1,5 +1,5 @@
 <template>
-    <div class="home-background">
+    <div class="home-background mt-5">
         <TheResultTextBox/>
         <TheResultAnimeInfo/>
         <CaptionBox title="結果をシェアする" />

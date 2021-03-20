@@ -26,7 +26,18 @@
 
     <!-- 履歴表示 -->
     <h3 id="recent-title">最近の診断結果</h3>
-    <v-list>
+    <v-row justify="center">
+      <v-col
+        v-for="item in items"
+        :key="item.title"
+        :href="item.to"
+        cols=5
+        class="d-flex child-flex"
+      >
+        <v-img :src="item.imageUrl" ></v-img>
+      </v-col>
+    </v-row>
+    <!--v-list>
       <v-list-item
         v-for="item in items"
         :key="item.title"
@@ -42,7 +53,7 @@
           </v-card>
         </v-list-item-content>
       </v-list-item>
-    </v-list>
+    </v-list-->
   </v-navigation-drawer>
 </template>
 
@@ -60,10 +71,11 @@ export default {
         { title: 'リゼロ', imageUrl: "https://eiga.k-img.com/images/anime/news/112498/photo/a8c42bc0e5f54dc2/320.jpg?1607668254", to: "/result/rezero" },
         { title: 'はたらく細胞', imageUrl: "https://assets.numan.tokyo/media/articles/images/000/008/367/large/b5b3dba5-f3a8-41af-b775-0bf08c1b7346.jpg?1584837573", to: "/result/hataraku" },
         { title: 'ゆるキャン△', imageUrl: "https://dengekionline.com/images/U6Eo/iVNf/gAfD/JWlv/Vkjtk62p9OOmOlk5ovvHfnSD7BsrhFp0IYEPVWKXQjNE4bjLhjQ2ETa8nvAKQkPdow0ld9prCOr91ahW.jpg", to: "/result/yurukyan" },
+        { title: 'PUIPUIモルカー', imageUrl: "https://media.image.infoseek.co.jp/isnews/photos/eigacom/eigacom_20201222001_0.jpg", to: "result/molcar"}
       ],
     }
   },
-  methods: { 
+  methods: {
     open: function () {
       this.isOpen = !this.isOpen;
     },

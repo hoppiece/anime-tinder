@@ -12,14 +12,17 @@
                   </v-img>
               </v-col>
               <v-col cols=12 md=9>
-                  <!--アニメの概要-->
-                  <v-card flat>
-                      <p class="text-md-h6 pa-4">
-                          貧乏な生活を送る高校２年生・上杉風太郎のもとに、好条件の家庭教師アルバイトの話が舞い込む。ところが教え子はなんと同級生！！　しかも五つ子だった！！全員美少女、だけど「落第寸前」「勉強嫌い」の問題児！最初の課題は姉妹からの信頼を勝ち取ること…！？毎日がお祭り騒ぎ！ 中野家の五つ子が贈る、かわいさ500％の五人五色ラブコメ開演！！
-                      </p>
-                  </v-card>
-
-                  <!--キャストやスタッフ情報-->
+                  <v-expansion-panels flat class="mb-3">
+                    <v-expansion-panel>
+                        <v-expansion-panel-header><strong>概要</strong></v-expansion-panel-header>
+                        <v-expansion-panel-content>
+                            <p>
+                                貧乏な生活を送る高校２年生・上杉風太郎のもとに、好条件の家庭教師アルバイトの話が舞い込む。ところが教え子はなんと同級生！！　しかも五つ子だった！！全員美少女、だけど「落第寸前」「勉強嫌い」の問題児！最初の課題は姉妹からの信頼を勝ち取ること…！？毎日がお祭り騒ぎ！ 中野家の五つ子が贈る、かわいさ500％の五人五色ラブコメ開演！！
+                            </p>
+                        </v-expansion-panel-content>
+                    </v-expansion-panel>
+                  </v-expansion-panels>
+                  <br/>
                   <v-expansion-panels flat class="mb-3">
                     <v-expansion-panel>
                         <v-expansion-panel-header><strong>キャスト/スタッフ</strong></v-expansion-panel-header>

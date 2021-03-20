@@ -408,6 +408,35 @@ def create_app():
                 return redirect(ENV_VALUES['APP_URL'])
         pass
 
+    @app.route('/app/fetch', methods=['GET'])
+    def fetch_anime_data():
+        anime_id = request.args.get("animeId")
+        session_id = request.args.get("sessionID")
+        user = User.query.filter(User.session_id == session_id).first()
+        if user is not None:
+            anime_data = db.session.query(AnimeData).\
+                        filter(AnimeData.anime_id == anime_id).first()
+            if anime_data is None:
+                response_data = {'animes': []}
+            else:
+                response_data = {
+                    "animes":
+                    [
+                        {
+                            "id": anime.anime_id,
+                            "title": anime.title,
+                            "image": img_encode(anime.image),
+                            "description": anime.description,
+                            "year": anime.year,
+                            "genre": anime.genre.split(),
+                            "company": anime.company,
+                        }
+                    ]
+                }
+            return jsonify(response_data)
+        else:
+            return redirect(ENV_VALUES['APP_URL'])
+
     return app
 
 

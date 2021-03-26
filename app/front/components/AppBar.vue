@@ -6,8 +6,8 @@
       dense
       flat
     >
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" ></v-app-bar-nav-icon>
-      <v-toolbar-title>Toonder</v-toolbar-title>
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer" @click="getRecent" ></v-app-bar-nav-icon>
+      <v-toolbar-title @click="goHome">Toonder</v-toolbar-title>
     </v-app-bar>
 
     <!--左の三ボタン押したら開くやつ-->
@@ -56,23 +56,17 @@
 import axios from 'axios';
 export default {
   data() {
-      return {
-          drawer: false,
-          group: null,
-          isOpen: false,
-          userImage: this.$store.state.userImage,
-          items: [],
-      }
+    return {
+      drawer: false,
+      group: null,
+      isOpen: false,
+      userImage: this.$store.state.userImage,
+      items: [],
+    }
   },
   // 最近の診断結果を10件まで取得
   async mounted() {
-    await axios.post(this.$config.serverURL+'/user/recent', {
-        num : 10,
-        sessionID: this.$store.state.authUser,
-    }).then(res => {
-      this.items = this.items.concat(res.data.animes);
-    }).catch(err => {
-    });
+    this.getRecent();
   },
   watch: {
     group () {
@@ -80,21 +74,33 @@ export default {
     },
   },
   methods: {
-      open: function () {
-      this.isOpen = !this.isOpen;
-      },
-      logout: function () {
-      // サーバからのリダイレクトがうまくいかない。簡易的にログアウト
-      this.$store.commit('setAuthUser', null);
-      this.$store.commit('setUserName', null);
-      this.$store.commit('setUserImage', null);
-      this.$store.commit('setStarted', true);
-      this.$router.push('/login');
-      },
-      // 画像
-      openResult: function (animeId) {
-        this.$router.push({  path: `/result/${animeId}`  });
-      }
+    open: async function () {
+    this.isOpen = !this.isOpen;
+    },
+    getRecent: async function() {
+      await axios.post(this.$config.serverURL+'/user/recent', {
+        num : 10,
+        sessionID: this.$store.state.authUser,
+      }).then(res => {
+        this.items = res.data.animes;
+      }).catch(err => {
+      });
+    },
+    logout: function () {
+    // サーバからのリダイレクトがうまくいかない。簡易的にログアウト
+    this.$store.commit('setAuthUser', null);
+    this.$store.commit('setUserName', null);
+    this.$store.commit('setUserImage', null);
+    this.$store.commit('setStarted', true);
+    this.$router.push('/login');
+    },
+    // 画像をクリックすると結果ページに遷移
+    openResult: function (animeId) {
+      this.$router.push({  path: `/result/${animeId}`  });
+    },
+    goHome: function () {
+      this.$router.push('/');
+    }
   },
 }
 </script>

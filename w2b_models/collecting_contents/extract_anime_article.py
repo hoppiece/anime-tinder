@@ -16,12 +16,12 @@ EXTRACTED_WIKIPEDIA_PATH = "/Users/JP26788/Documents/data/wikipedia/extracted_te
 def create_title_set(filename="animeinfo.json"):
     try:
         with open("animeinfo.json") as fp:
-            anime_info = json.loads(fp.read())
+            anime_info_list = json.loads(fp.read())
     except FileNotFoundError:
         logger.error("create 'animeinfo.json' by running animeinfocrawl.py")
 
     titles = set()
-    for idx, info in anime_info.items():
+    for info in anime_info_list:
         titles.add(info["title"])
     return titles
 

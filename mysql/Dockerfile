@@ -1,4 +1,3 @@
-# FROM mysql:5.7
 FROM mariadb:latest
 EXPOSE 3306
 

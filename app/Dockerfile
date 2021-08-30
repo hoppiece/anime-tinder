@@ -1,6 +1,10 @@
 # イメージ指定
 FROM node:12.13.0-alpine
 
+# m1対応
+RUN apk update && \
+    apk add --no-cache python make g++
+
 # locale & timezone (Asia/Tokyo)
 ENV LANG C.UTF-8
 ENV TZ Asia/Tokyo

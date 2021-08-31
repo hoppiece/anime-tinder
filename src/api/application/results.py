@@ -4,8 +4,7 @@ from src.database import db
 from src.models import User, LikeUnlike, AnimeData, Recommended
 from sqlalchemy import desc
 from src.settings import ENV_VALUES
-from src.utils import img_encode
-from src.calculation import collaborative_filtering
+from src.utils import img_encode, collaborative_filtering
 
 app = Blueprint("rslts", __name__)
 api = Api(app)

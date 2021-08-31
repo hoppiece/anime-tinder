@@ -3,30 +3,35 @@
     "name": "callback",
     "path": "/callback",
     "component": "/home/app/front/pages/callback.vue",
-    "chunkName": "pages/callback"
+    "chunkName": "pages/callback",
+    "_name": "_5fa2fc1a"
   },
   {
     "name": "login",
     "path": "/login",
     "component": "/home/app/front/pages/login.vue",
-    "chunkName": "pages/login"
+    "chunkName": "pages/login",
+    "_name": "_631fc3ab"
   },
   {
     "name": "result",
     "path": "/result",
     "component": "/home/app/front/pages/result/index.vue",
-    "chunkName": "pages/result/index"
+    "chunkName": "pages/result/index",
+    "_name": "_17718d8e"
   },
   {
     "name": "result-id",
     "path": "/result/:id",
     "component": "/home/app/front/pages/result/_id.vue",
-    "chunkName": "pages/result/_id"
+    "chunkName": "pages/result/_id",
+    "_name": "_41819b76"
   },
   {
     "name": "index",
     "path": "/",
     "component": "/home/app/front/pages/index.vue",
-    "chunkName": "pages/index"
+    "chunkName": "pages/index",
+    "_name": "_cd0fbed8"
   }
 ]

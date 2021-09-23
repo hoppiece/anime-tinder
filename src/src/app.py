@@ -4,6 +4,8 @@ from src.api.application import random_anime, results, fetch_data
 from src.database import init_db
 from flask_cors import CORS
 
+# import src.models  # noqa: F401
+
 # https://qiita.com/AndanteSysDes/items/a25acc1523fa674e7eda
 # https://qiita.com/shirakiya/items/0114d51e9c189658002e
 # https://qiita.com/kai_kou/items/5d73de21818d1d582f00

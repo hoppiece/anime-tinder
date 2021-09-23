@@ -3,10 +3,14 @@ from typing import Dict
 from os.path import join, dirname
 from dotenv import load_dotenv
 
-if os.path.exists(join(dirname(__file__), "../.env.prod")):
+envdir = join(dirname(__file__), "../../env/")
+
+if os.path.exists(join(envdir, ".env.prod")):
+    dotenv_path = join(envdir, ".env.prod")
+    IS_LOCAL = False
+elif os.path.exists(join(dirname(__file__), "../.env.prod")):
     dotenv_path = join(dirname(__file__), "../.env.prod")
-elif os.path.exists(join(dirname(__file__), "../.env")):
-    dotenv_path = join(dirname(__file__), "../.env")
+    IS_LOCAL = True
 else:
     print("env file does not exist.")
     exit()

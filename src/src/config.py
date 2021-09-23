@@ -1,6 +1,7 @@
 # 環境変数を使う場合はosをインポートする
 # import os
 from src.settings import ENV_VALUES
+from src.settings import IS_LOCAL
 
 """flaskのappのconfig設定オブジェクトを書く"""
 
@@ -29,8 +30,27 @@ class DevelopmentConfig:
         }
     )
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+    SQLALCHEMY_ECHO = True
+    JSON_AS_ASCII = False
+
+
+class ProdConfig:
+    SQLALCHEMY_DATABASE_URI = (
+        "mysql+pymysql://{user}:{password}@{host}/{database}?charset=utf8mb4"
+    ).format(
+        **{
+            "user": ENV_VALUES["DB_USER"],
+            "password": ENV_VALUES["DB_PW"],
+            "host": ENV_VALUES["DB_HOST"],
+            "database": ENV_VALUES["DB_NAME"],
+        }
+    )
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_ECHO = False
     JSON_AS_ASCII = False
 
 
-Config = DevelopmentConfig
+if IS_LOCAL:
+    Config = DevelopmentConfig
+else:
+    Config = ProdConfig

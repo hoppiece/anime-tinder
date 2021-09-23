@@ -136,3 +136,4 @@ mysql/mysql_data/
 app/front.nuxt/
 collecting_content/download
 src/figures
+sync_dir.sh

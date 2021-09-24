@@ -1,3 +1,4 @@
+from typing import Final
 from flask import redirect, Blueprint
 from flask_restful import Resource, Api
 from requests_oauthlib import OAuth1Session
@@ -11,17 +12,17 @@ api = Api(app)
 class get_twitter_request_token(Resource):
     def get(self):
         # twitter api key
-        consumer_api_key = ENV_VALUES["CONSUMER_API_KEY"]
-        consumer_secret_key = ENV_VALUES["CONSUMER_SECRET_KEY"]
+        CONSUMER_API_KEY: Final[str] = ENV_VALUES["CONSUMER_API_KEY"]
+        CONSUMER_SECRET_KEY: Final[str] = ENV_VALUES["CONSUMER_SECRET_KEY"]
         # Twitter api URLs
-        request_token_url = "https://api.twitter.com/oauth/request_token"
-        authorization_url = "https://api.twitter.com/oauth/authorize"
+        REQUEST_TOKEN_URL: Final[str] = "https://api.twitter.com/oauth/request_token"
+        AUTHORIZATION_URL: Final[str] = "https://api.twitter.com/oauth/authorize"
         try:
             # リクエストトークンを取得し, 認証urlを取得してリダイレクトする. 失敗したらトップページへのリンクを提示する.
             # oauth_callback = ENV_VALUES['APP_URL']+"/callback"
-            twitter = OAuth1Session(consumer_api_key, consumer_secret_key)
-            twitter.fetch_request_token(request_token_url)
-            auth_url = twitter.authorization_url(authorization_url)
+            twitter = OAuth1Session(CONSUMER_API_KEY, CONSUMER_SECRET_KEY)
+            twitter.fetch_request_token(REQUEST_TOKEN_URL)
+            auth_url = twitter.authorization_url(AUTHORIZATION_URL)
             return redirect(auth_url)
 
         except Exception as e:

@@ -1,7 +1,117 @@
 CREATE DATABASE anime_recommender;
 USE anime_recommender
 
+-- MariaDB dump 10.19  Distrib 10.6.4-MariaDB, for debian-linux-gnu (aarch64)
+--
+-- Host: 172.30.0.2    Database: anime_recommender
+-- ------------------------------------------------------
+-- Server version	10.6.4-MariaDB-1:10.6.4+maria~focal
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `anime_data`
+--
+
+DROP TABLE IF EXISTS `anime_data`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `anime_data` (
+  `anime_id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `image` varchar(127) DEFAULT NULL,
+  `description` text NOT NULL,
+  `year` varchar(127) NOT NULL,
+  `genre` varchar(255) NOT NULL,
+  `company` varchar(255) NOT NULL,
+  PRIMARY KEY (`anime_id`),
+  UNIQUE KEY `anime_id` (`anime_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `anime_data`
+--
+
+LOCK TABLES `anime_data` WRITE;
+/*!40000 ALTER TABLE `anime_data` DISABLE KEYS */;
+INSERT INTO `anime_data` VALUES (1,'アーヤと魔女','NULL','ダイアナ・ウィン・ジョーンズによるファンタジー小説、またそれを原作としたスタジオジブリ制作のアニメーション作品。','2020','ファンタジー','スタジオジブリ\r'),(2,'五等分の花嫁','gotoubunn.jpg','春場ねぎによる日本の漫画作品。','2019','ラブコメディ','手塚プロダクション\r'),(3,'PSYCHO-PASS サイコパス 3','psychopass3.jpeg','Production I.G制作による日本のオリジナルテレビアニメ作品、および、これを原作としたメディアミックス作品。','2019秋','SF アクション クライムサスペンス','ProductionI.G\r'),(4,'鬼滅の刃','kimetsunoyaiba.png','大正時代を舞台に主人公が鬼と化した妹を人間に戻す方法を探すために戦う姿を描く和風剣戟奇譚。','2019','剣劇 ダーク・ファンタジー','ufotable\r'),(5,'呪術廻戦','jujutukaisen.jpeg','人間の負の感情から生まれる化け物・呪霊を呪術を使って祓う呪術師の闘いを描いた、ダークファンタジー・バトル漫画。','2020秋','ダーク・ファンタジー','MAPPA\r'),(6,'進撃の巨人','shingeki.png','圧倒的な力を持つ巨人とそれに抗う人間達との戦いを描いたダーク・ファンタジー漫画。','2017','ダークファンタジー アクション','MAPPA\r'),(7,'ノラと皇女と野良猫ハート','noratokoujoto.jpg','日本のアダルトゲームブランドであるHARUKAZEより2016年2月26日に発売された成人向け美少女ゲーム原作。地上世界に住むごく普通の少年・ノラが、冥界の皇女・パトリシアの魔法によって猫の姿にされてしまうというファンタジー作品。','2017夏','恋愛 学園 ファンタジー','ダブトゥーンスタジオ\r'),(8,'京都寺町三条のホームズ','kyototeramachisanjo.png','京都へ移り住んで半年になる女子高生の真城葵は、とある事情により亡き祖父の骨董品を鑑定してもらうべく、寺町三条商店街にポツリと佇む骨董品店『蔵』を訪れる。しかしそこで出逢った鑑定士の家頭清貴は美形で上品で柔らかな物腰でありながら、実は「ホームズ」の異名で呼ばれるほど怖ろしく鋭い人物で、葵が骨董品を家族に内緒でこっそり持ち出してきたことをその場で見抜いてしまう。どうしてもお金が必要だった葵に、清貴は『蔵』でアルバイトをしてはどうかと持ち掛け、その日から葵は彼と共に骨董品と京都にまつわる様々な出来事に遭遇していくことに。','2018夏','ミステリー','アニメーションスタジオ・セブン\r'),(9,'SSSS.GRIDMAN','gridman.jpg','響裕太はある日、クラスメイトの宝多六花の家の前で倒れ、自分の名前を含むすべての記憶を思いだせない状態で目覚める。混乱する裕太は、六花の家が営むジャンクショップに置かれていた古いパソコンから呼びかけて来るハイパーエージェントグリッドマンから、自身の使命を果たすように諭される。裕太は戸惑いながらも日常生活に戻るが、街に謎の怪獣が現れたとき、グリッドマンに導かれるまま彼と合体して怪獣を撃破する。かくして裕太は、六花や友人の内海将とグリッドマン同盟を結成し、怪獣の脅威に立ち向かう。','2018秋','SF','TRIGGER\r'),(10,'ゴールデンカムイ','goldenkamui.jpg','明治末期、日露戦争終結直後の北海道周辺を舞台とした、金塊をめぐるサバイバルバトル漫画。また戊辰戦争・日露戦争・ロシア革命などの歴史ロマン要素のほか、狩猟・グルメ要素、アイヌなどの民俗文化の紹介要素も併せ持つ。','2018/2020','冒険 歴史 青年漫画','ジェノスタジオ\r'),(11,'ご注文はうさぎですか？','gochiusa.jpg','高校入学を機に「木組みの家と石畳の街」に引っ越してきたココア。下宿先を探しつつ休憩がてら喫茶店に入ると、偶然にもそこが自分の下宿先ラビットハウスであった。ココアは、お世話になる家に奉仕をするという高校の方針により、ラビットハウスの店員として、そしてラビットハウスの一人娘であるチノの“自称”姉として働くことになるのであった。','2014','日常','WHITE FOX\r'),(12,'銀魂','gintama.jpg','宇宙の知的生物天人（あまんと）諸族によって開国を強要され、銀河文明が導入された江戸のかぶき町を主たる舞台とする物語である。','2011-2018','SF 時代劇 ギャグ','サンライズ\r'),(13,'PUI PUI モルカー','molcar.png','モルモットの車「モルカー」の日常を描いたストップモーションアニメであり、作中には羊毛フェルトで作られたモルカーやジオラマ用の人形が登場するほか、人間の俳優が登場する場面もある。','2021','コメディ','シンエイ動画、ジャパングリーンハーツ\r'),(14,'ポプテピピック','popteamepic.jpg','作風は主に時事ネタや、ブラックユーモア、風刺ギャグ、ナンセンス、スラップスティック、1980年代後半以降のアニメやゲーム、ドラマなどを元ネタとするパロディが特徴。また、「クソ漫画」であることをたびたび自称しており、オチがなかったり、コマのコピーアンドペーストを繰り返したり、第四の壁を破ったりと、本来漫画ではタブーとされているようなことも頻繁に描かれる。','2018','ギャグ シュール','神風動画 キングレコード\r'),(15,'妖怪ウォッチ','youkaiwatch.jpg','原作ゲームとリンクしながらも、アニメでは主に小学生の普遍的な日常を舞台としたコメディ色が濃厚なギャグアニメとなっている。','2014','ギャグ ファンタジー','テレビ東京、電通、OLM\r'),(16,'カイトアンサ','kaitoansa.jpg','危機に直面した立川の街を救うため、阿園魁斗と有進杏茶はQフォーマーへと変身する任務を与えられる。そして16臣封の出題する16の謎を時間内に解くことになった。','2017','パズル','天狗工房\r'),(17,'ヴァンガードGZ','vangardgz.jpg','全てを滅ぼす「破壊の竜神 ギーゼ」の復活を目論み地球への侵攻を開始した「使徒」を名乗るディフライダーたちと地球のヴァンガードファイターの戦いを描く、ヴァンガードGシリーズ最終作。','2017','カードゲーム','ブリッジ\r'),(18,'AKIBA\'S TRIP','akibastrip.jpg','秋葉原を舞台に、吸血鬼・カゲヤシ（陰妖子）とヒトとの戦いに巻き込まれた青年を描いたアクションアドベンチャー。','2017','バトル','GONZO\r'),(19,'アキンド星のリトル・ペソ','akindolittlepeso.jpg','LINEゲームおよび2017年4月から6月まで放送された5分枠のショートアニメ。','2017','ショートアニメ','\"ファンワークス'),(20,'ガーリッシュナンバー','garlishnumber.jpg','女子大生・烏丸千歳は「つまんない事なんてしたくない」という思いから声優養成所の門を叩き、これを卒業して晴れて声優デビューを果たす。しかし彼女に回ってくるのは名前も無いような端役ばかり。「この業界はおかしい」と言って憚（はばか）らない千歳は声優として成功出来るのか。','2016','\"声優',' 青春\"'),(21,'イケメン戦国◆時をかける恋','ikemensengoku.jpg','3Dモデルキャラクタ―となった戦国武将の日常を描くコメディとなる[5]。なおエンドカードの5秒間だけ、日替わり登場人物1名のワンショットで原作同様の頭身となる。','2017','\"戦国',' 恋愛\"'),(22,'終物語','owarimonogatari.jpg','西尾維新による青春怪異小説。再び阿良々木暦に焦点が当てられ、シリーズの総決算となる。','\"2015',' 2017\"','青春怪異小説'),(23,'俺たちゃ妖怪人間','oretatyayoukainingen.jpg','「歌魔羅町かまらちょう」なる歓楽街に棲み付いた3人の妖怪人間が、いろいろと苦労しながら生きる様を描く。','2018','妖怪','ADK\r'),(24,'おそ松さん','osomatsusan.jpg','松野家の六つ子、おそ松、カラ松、チョロ松、一松、十四松、トド松は20歳を過ぎても定職につかず、親の脛をかじるいわゆるニート。仕事にも女性にも縁がない個性的な6人は、時に足の引っ張り合いをしながらも、ひとつ屋根の下で暮らし、それぞれの趣味にいそしむ日々。そんな彼達に、うさんくさい男イヤミ、おでん屋のチビ太、六つ子のアイドル的存在トト子、いつもパンツ一丁のおじさんデカパン、大きな口の中年男ダヨーン、あどけない少年（に見えるが実は成人）ハタ坊などの面々が加わり毎回騒動が巻き起こる。','2015','\"ギャグ',' ブラックコメディ\"'),(25,'お酒は夫婦になってから','osakehafuufuni.jpg','PR会社「スピリッツコム」で働く水沢千里は無口ながらも、主任職を任されるほど有能かつ努力家で、周囲からも尊敬されていた。だが、アルコール類は一切嗜まない。一方で、彼女は愛する夫・壮良の前だけでは彼の手作りカクテルを呑み、仕事の時とは全く違った素のキャラクターをさらけ出すのだった。','2017','コメディ','Creators in Pack\r'),(26,'エロマンガ先生','eromangasensei.jpg','eromangasensei.jpg','2017','\"ホームドラマ',' ラブコメ\"'),(27,'EVEL OR.LIVE','evilorlive.jpg','『EVIL OR LIVE』（中: 理想禁区）は、李暁楠による漫画。中国の『テンセント漫画』（テンセント）にて連載されている。','2017','学園','絵梦\r'),(28,'うらら迷路帖','urarameirotyou.jpg','女性の占い師「うらら」が治める町「迷路町」。そこへ五殿山からやってきた野生児「千矢」は道中で同じうららを志す「紺」「小梅」「ノノ」、師である「ニナ」らと出会う。千矢の目的は名前も知らない母を探し出すことで育ての親である「セツ」から千矢の母が迷路町にいると言われたと言う。人としての常識も欠けている彼女は壁にぶつかりながらも人として、うららとして仲間と共に成長していく。仲間たちと鍛錬の日々を過ごす中、「白無垢祭」の最中に千矢は黒い耳と赤い目を持つ謎の生物・くろうと出会う','2017','占い','J.C.STAFF\r'),(29,'有頂天家族','utyoutenkazoku2.jpg','千年の都・京都。ここでは古来より、人に化けた狸と天狗が、人間社会に紛れて暮らしていた。糺ノ森に住む狸の名門・下鴨家の父であり、狸界の頭領「偽右衛門」でもあった総一郎は、ある年の瀬に人間達に狸鍋にされ、帰らぬ狸となってしまった。','2017','群像劇','P.A.WORKS\r'),(30,'Wake Up Girls!','wakeupgirlsanother.jpg','「アイドルの祭典」で優勝し、全国的に認知度が高まったWUGだが、日本中にアイドルひしめき合う時代、いまだグリーン・リ－ブスエンタテインメントは小規模芸能プロに留まり、WUGもまた東北を中心とした「ご当地アイドル」の域を出るまでには至っていない。','2017','アイドル','ミルパンセ');
+/*!40000 ALTER TABLE `anime_data` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `likeunlike`
+--
+
+DROP TABLE IF EXISTS `likeunlike`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `likeunlike` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `anime_id` int(11) NOT NULL,
+  `status` int(11) NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `likeunlike`
+--
+
+LOCK TABLES `likeunlike` WRITE;
+/*!40000 ALTER TABLE `likeunlike` DISABLE KEYS */;
+INSERT INTO `likeunlike` VALUES (1,1,1,0,'2021-03-19 22:48:57','2021-03-19 22:49:36'),(2,1,2,2,'2021-03-19 22:48:57','2021-03-19 22:49:36'),(3,1,3,1,'2021-03-19 22:48:57','2021-03-19 22:49:36'),(4,2,2,1,'2021-03-19 22:48:57','2021-03-19 22:49:36'),(5,2,1,1,'2021-03-19 22:48:57','2021-03-19 22:49:36');
+/*!40000 ALTER TABLE `likeunlike` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `recommended`
+--
+
+DROP TABLE IF EXISTS `recommended`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `recommended` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `anime_id` int(11) NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `recommended`
+--
+
+LOCK TABLES `recommended` WRITE;
+/*!40000 ALTER TABLE `recommended` DISABLE KEYS */;
+INSERT INTO `recommended` VALUES (1,1,3,'2021-03-20 16:36:02','2021-03-20 16:36:02'),(2,1,2,'2021-03-20 16:36:16','2021-03-20 16:36:16'),(3,1,5,'2021-03-20 16:36:22','2021-03-20 16:36:22'),(4,2,2,'2021-03-20 16:36:25','2021-03-20 16:36:25'),(5,2,7,'2021-03-20 16:36:29','2021-03-20 16:36:29');
+/*!40000 ALTER TABLE `recommended` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
 DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
@@ -10,60 +120,25 @@ CREATE TABLE `users` (
   `session_id` varchar(255) NOT NULL,
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `user_id` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Dumping data for table `users`
+--
 
-
-DROP TABLE IF EXISTS `anime_data`;
-CREATE TABLE `anime_data` (
-  `anime_id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) NOT NULL,
-  `image` varchar(127),
-  `description` text NOT NULL,
-  `year` varchar(127) NOT NULL,
-  `genre` varchar(255) NOT NULL,
-  `company` varchar(255) NOT NULL,
-  PRIMARY KEY (`anime_id`),
-  UNIQUE KEY `anime_id` (`anime_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-LOCK TABLES `anime_data` WRITE;
-/*!40000 ALTER TABLE `anime_data` DISABLE KEYS */;
-INSERT INTO `anime_data` VALUES (1,'妖怪ウォッチ','youkaiwatch.jpg','原作ゲームとリンクしながらも、アニメでは主に小学生の普遍的な日常を舞台としたコメディ色が濃厚なギャグアニメとなっている。','2014','ギャグ ファンタジー','テレビ東京、電通、OLM'),(2,'RS計画 -Rebirth Storage-','rskeikaku.jpg','西暦2025年――突如出現した未知の脅威｢機巧｣は人類への攻撃を展開し、多くの都市がなすすべもなく破壊された。窮地に立たされた人類だったが、日本で機巧の残骸が発見されたことをきっかけに設立された｢東京機巧研究所｣(東機研)を拠点に、機巧の兵器利用の研究が進められていく。毒をもって毒を制すべく、機巧をもって機巧に対抗せんとするその方策は、人類に残された唯一の希望だった。そして9年後。発見された残骸を手がかりに開発された主力機巧｢むっつ｣の実戦投入が近づいていた。｢むっつ｣搭乗パイロットの候補生として選ばれた少年・佐神凛(さがみ・りん)と少女・御堂結絃(みどう・ゆづる)は、人類の未来という大きすぎる希望を背負いながら、課せられた任務に果敢に立ち向かっていく。だが、ふたりを待ち受けていたのは、あまりにも過酷な運命だった――','2016','ロボット','unknown'),(3,'アイカツスターズ!','aikatsustars.jpg','トップアイドルをめざしアイドル活動“アイカツ！”にはげむ少女たちのサクセスストーリー！アイドル学校である四ツ星学園。学園のトップスターである4人は“S4”と呼ばれ、アイカツ界で大活躍！新入生たちは、S4を目標に、アイドル活動にはげみます。きらめく「アイカツ！カード」にグリッター！自分らしく輝くためにセルフプロデュース！強く明るくまっすぐに！歌やダンスにファッションも！女の子の憧れを全部つめこんで、新しいアイカツが始まります。アイドルの一番星に向かって、夢へのスタート!!','2016','アイドル ファッション 学園','BN Pictures'),(4,'アイドルメモリーズ','idolmemories.jpg','この物語の舞台は、近未来。高速ネット通信とVR技術の革新により、自宅にいながらリアルな旅行体験やライブ体験が一般化している。アイドル活動もその在り方を変え、主にネットを介したVR空間が活動の起点となっている。アイドルのニーズは世界的に高まり、世界各地にアイドル育成を目的とした学校が設立された。この学園もその中の一つで、どこの国にも属さない公海上に存在する天然の島と人工島を連結して構成されたビギニング島にある。過去にも世界的に活躍したアイドルを数々生み出してきたことがある学園だが、それも過去の栄光で最近はランキング上位に入ることがなく低迷している。そんな学園に世界各国から入学してきた個性豊かなアイドルの卵たちが、苦楽をともにし切磋琢磨しながらアイドルリーグのトップを目指して成長していく青春物語である。','2016','アイドル','セブン・アークス・ピクチャーズ'),(5,'あおおに〜じ・あにめぇしょん〜','aooni.jpg','町はずれにある無人の洋館。そこにはお化けが出るという噂があった。ひろしは同級生のたくろうやたけし、そしてみかと共に訪れたその館で、奇っ怪な化け物、“あおおに”に襲われてしまう。様々ななぞ解きを経て、彼らは館から脱出することが出来るのか？それとも……。このまま‟あおおに“と面白おかしく館で暮らすのか！？死して尚‟あおおに“と戯れる4人の肝試しライフが、今始まる！！','2016','ブラックコメディ','スタジオディーン'),(6,'蒼の彼方のフォーリズム','aonokanatano.jpg','反重力を発生させるシューズ、通称“グラシュ”の発明により、人が簡単に空を飛ぶことが出来るようになった世界。久奈浜学院に転校してきた倉科明日香は、同級生の鳶沢みさき、日向晶也達との出会いを通じて、グラシュを使った新興スカイスポーツ『フライングサーカス』(通称FC)を知り、その魅力に惹かれていく。学院のFC部に入部した明日香は、仲間達と共に、時にはぶつかり、励まし合い、それぞれの目標に向かいながら、強力なライバル達に立ち向かっていく――。――目指すは、夏の大会。','2016','恋愛 スカイスポーツ','GONZO'),(7,'ポプテピピック','popteamepic.jpg','どうあがいても、クソ。','2018','ギャグ シュール','神風動画 キングレコード'),(8,'アクティヴレイド -機動強襲室第八係-','activeraid.jpg','第三次流砂現象によりその一部が泥濘に沈んだ東京。復興作業用に作られた、高出力・強化装甲<ウィルウェア>を使った犯罪の増加に対処すべく、警察庁警備局は、その吉祥寺分室に第五特別公安課第三機動強襲室第八係──通称<ダイハチ>を新設した。様々な法的制約としがらみに縛られながら、知恵と勇気と口八丁で凶悪事件に挑む若者達(一部を除く)！ 決裁完了、出動せよ！！','2016','近未来SF アクション','プロダクションアイムズ'),(9,'京都寺町三条のホームズ','kyototeramachisanjo.jpg','京都の寺町三条商店街にポツリとたたずむ、骨董品店『蔵』。女子高生の真城葵はひょんなことから『蔵』の店主の息子、家頭清貴と知り合い、アルバイトを始める。清貴は、物腰は柔らかいが恐ろしく勘が鋭く『ホームズ』と呼ばれていた。葵は清貴とともに、客から持ち込まれる骨董品にまつわる様々な依頼を受けていく。','2018夏','ミステリー','アニメーションスタジオ・セブン'),(10,'五等分の花嫁','gotoubunn.jpg','貧乏な生活を送る高校２年生・上杉風太郎のもとに、好条件の家庭教師アルバイトの話が舞い込む。ところが教え子はなんと同級生！！　しかも五つ子だった！！全員美少女、だけど「落第寸前」「勉強嫌い」の問題児！最初の課題は姉妹からの信頼を勝ち取ること…！？毎日がお祭り騒ぎ！ 中野家の五つ子が贈る、かわいさ500％の五人五色ラブコメ開演！！','2019','ラブコメディ','手塚プロダクション'),(11,'鬼滅の刃','kimetsunoyaiba.jpg','時は大正、日本。炭を売る心優しき少年・炭治郎は、ある日鬼に家族を皆殺しにされてしまう。さらに唯一生き残った妹の襧豆子は鬼に変貌してしまった。絶望的な現実に打ちのめされる炭治郎だったが、妹を人間に戻し、家族を殺した鬼を討つため、“鬼狩り”の道を進む決意をする。人と鬼とが織りなす哀しき兄妹の物語が、今、始まる――！','2019','剣劇 ダーク・ファンタジー','ufotable'),(12,'あにトレ!XX 〜ひとつ屋根の下で〜','anitorexx.jpg','最近使っていない筋肉はないですか？アニメで一緒に楽しく運動して、気持ちいい汗を流しちゃおう！アイドルを目指す4人は所属する事務所の養成所で同居することに！？前期を上回るスケールのトレーニング種目がズラリ！トレーニングアイテムや生活環境を活用したトレーニングも登場！わがままで寂しがり屋な出海さくらちゃん(CV.鈴木絵理)も新たに登場！アイドルを目指す5人+1人の可愛いキャラクター達があなたと一緒にエクササイズして、気になるその体脂肪率を+αの1クールで10000%まで下げちゃいます…！？','2016','エクササイズ','ライジングフォース'),(13,'アバローのプリンセス エレナ','princesselena.jpg','魔法に満ちた王国や陽気な音楽とともに描かれる、勇敢で優しいプリンセス。ディズニー・チャンネルの新しいプリンセス・ストーリーには今までにない魅力がいっぱい！','2016','ファンタジー ミュージカル 冒険','ディズニー・テレビジョン・アニメーションイコン・クリエイティブスタジオアークプロダクションLtd.・トロント'),(14,'甘々と稲妻','amaamatoinazuma.jpg','ひとり娘と二人で暮らす高校教師が、ふとしたきっかけから教え子の女子高生と三人でごはんを作って食べることに。三人とも料理はまったくできないけれど、美味しいごはんはとっても大好き！あったかくって楽しいひとときが、きっとあなたを夢中にさせる！','2016','料理 グルメホームドラマ','TMS/3xCube'),(15,'あまんちゅ!','amanchu.jpg','春。物事が大きく移り変わる季節。伊豆の町で生まれ育った小日向光と、東京から引っ越してきたばかりの大木双葉は、ともに夢ヶ丘高校に入学し運命的な出会いを果たす。光に誘われるまま双葉が足を踏み入れたのは、スキューバダイビングという未知の世界。何事もプラス思考の光と、自分がいかに小さな存在かを実感させてくれるダイビングの魅力――新たな出会いが、双葉の臆病な心を徐々に溶かしていく。そして、日々の生活においても二人はさながらダイビングで命を預け合う｢バディ｣のように、ともに多くの幸せを共有する関係を築いていくことに……。','2016','日常 青春','J.C.STAFF'),(16,'PUI PUI モルカー','molcar.jpg','舞台はモルモットが車になった世界。癒し系の車“モルカー”。くりっくりな目と大きな丸いお尻、トコトコ走る短い手足。常にとぼけた顔で走り回るモルカー。渋滞しても、前のモルモットのお尻を眺めているだけで癒されるし、ちょっとしたトラブルがあってもモフモフして可愛いから許せてしまう？！クルマならではの様々なシチュエーションを中心に、癒しあり、友情あり、冒険あり、ハチャメチャアクションもありのモルだくさんアニメーション！','2021','コメディ','シンエイ動画、ジャパングリーンハーツ'),(17,'アルスラーン戦記 風塵乱舞','arslan2.jpg','東西を結ぶ陸路の中心地・エクバターナを王都に掲げ、各地からの人や物資、そして豊かな文化が集まる強国パルス。この国の王太子として生まれた少年・アルスラーンは、幸福のうちに国を引き継ぐはずだった。土煙が舞う平原に、パルスの誇る騎馬隊が葬り去られるその日までは……。パルスの豊かな領土を狙って、異教徒の国・ルシタニアが侵攻を開始。初めて直面する本物の戦いに、不安を隠しきれない“気弱な”王太子・アルスラーン。彼の不安が的中したかのように、戦場には不穏な空気が渦巻き始める。敵の策略にはまり、これまでにない脅威を感じるパルス軍と、混乱する戦況に翻弄されるアルスラーンの父王であるアンドラゴラス三世……。駆けつけた｢戦士の中の戦士(マルダーンフ・マルダーン)｣の異名を持つ騎士・ダリューンとともに、次々と襲いかかる敵、そして過酷な運命へと立ち向かうアルスラーン。運命という名の嵐が吹き荒れるなか、彼は信頼できる仲間たちとともに“王太子”として最初の一歩を踏み出す!','2016','ファンタジー','アニメイトフィルム'),(18,'あはれ!名作くん','aharemeisaku.jpg','description','2016','シュール 学園 コメディ','Pie in the sky'),(19,'暗殺教室','ansatsukyoushitsu.jpg','ある日突然、月が爆発して7割方蒸発した。その犯人と称し、しかも来年三月には地球をも爆破するという超生物がやってきたのは、何故か中学校の教室。なんとここで教師をするというのだ。人知を超えた能力を持ち、軍隊でも殺せないその怪物の暗殺を、各国首脳はやむをえず、そのクラス、椚ヶ丘中学校3年E組の生徒に委ねることになる。なんと成功報酬は百億円。落ちこぼれクラス、「エンドのE組」の生徒たちは、卒業までにこの暗殺対象の教師、「殺せんせー」を殺せるのか・・・！？','2016','少年漫画、学園、風刺ブラック・コメディクライム・サスペンス','Lerche'),(20,'アンジュ・ヴィエルジュ','angevierge.jpg','description','2016','学園 ファンタジー','SILVER LINK. / CONNECT'),(21,'あんハピ♪','anhapi.jpg','description','2016','学園 ブラックコメディ','SILVER LINK.'),(22,'ご注文はうさぎですか？','gochiusa.jpg','この春から高校に通うべく新しい街にやってきたココア。道に迷って偶然に喫茶ラビットハウスに入るが、実は、そこが彼女が住み込むことになっていた喫茶店だった。ちっちゃくてクールなチノ、軍人気質なリゼ、おっとり和風な千夜、気品あふれる庶民派シャロと全方位的なかわいさの登場人物に、チノの同級生マヤ＆メグ、常連客の青山ブルーマウンテン先生も加わってラビットハウスは今日もすべてがかわいい！','2014','日常','WHITE FOX'),(23,'ViVid Strike!','vividstrike.jpg','description','2016','格闘 魔法少女','セブン・アークス・ピクチャーズ'),(24,'ゴールデンカムイ','goldenkamui.jpg','明治時代後期。「不死身の杉元」の異名を持つ日露戦争の英雄・杉元佐一は、ある目的のために大金を手に入れるべく北海道にいた。そこにアイヌから奪われた莫大な埋蔵金という、一攫千金のチャンスが舞い込む。埋蔵金は網走監獄に収監中の男によって隠匿され、24人の脱獄囚の身体に刻まれた刺青がその在り処を示す手がかりだという。そんな折、ヒグマの襲撃を受けた杉元を、ひとりのアイヌの少女が救う。名をアシㇼパというその少女は、埋蔵金を奪った男に父親を殺されていた。さらに杉元の動きに呼応するように、かねてより埋蔵金を狙って暗躍していた北の最強部隊・第七師団や刺青を背負う脱獄囚たちの動きも顕在化。果たして、雄大な北の大地を舞台に巻き起こった一攫千金サバイバルの行方は……!?','2018/2020','冒険 歴史 青年漫画','ジェノスタジオ'),(25,'うしおととら','ushiototora.jpg','description','2016','少年漫画 怪奇ファンタジーホラー バトル アクション','PASTEL'),(26,'SSSS.GRIDMAN','gridman.jpg','ツツジ台に住む高校1年生の響裕太は、ある日目覚めると記憶喪失になっていた。そして裕太は古いパソコンに映る『ハイパーエージェント・グリッドマン』と出会う。グリッドマンは使命を果たせと語りかけ、裕太はその言葉の意味と記憶を探し始める。突然の事に戸惑いつつも、クラスメイトの内海将や宝多六花、新条アカネたちに助けられながら毎日を送る裕太だった。が、その平穏な日々は、突然現れた怪獣によって容易く踏みつぶされた――','2018秋','SF','TRIGGER'),(27,'宇宙パトロールルル子','utyuupatrolruruko.jpg','description','2016','SF','TRIGGER'),(28,'うどんの国の金色毛鞠','udonnokunino.jpg','description','2016','ハートフル ファンタジー','ライデンフィルム'),(29,'進撃の巨人','shingeki.jpg','巨人がすべてを支配する世界。巨人の餌と化した人類は高さ50メートルの巨大な壁を築き、壁外への自由と引き換えに侵略を防いでいた…。まだ見ぬ壁外の世界を夢見る10歳の少年、エレン・イェーガー。エレンは仮初めの平和に満足し外の世界へ出ることを諦めた人々に違和感を覚える。彼らを｢家畜｣と呼ぶエレン。エレンを｢異物｣と感じる人々。だが、壁をも越える超大型巨人の出現により、エレンの｢夢｣も人々の｢平和｣も突如として崩れ去ってしまう……。','2017','ダークファンタジー アクション','MAPPA'),(30,'大家さんは思春期!','ooyasannhashishunki.jpg','description','2016','4コマ漫画 コメディ','セブン・アークス・ピクチャーズ'),(31,'ALL OUT!!','allout.jpg','description','2016','ラグビー、スポーツ','トムス・エンタテインメントMADHOUSE'),(32,'Occultic;Nine -オカルティック・ナイン-','occulticnine.jpg','description','2016','SF オカルト','A-1 Pictures'),(33,'おくさまが生徒会長!+!','okusamagaseitokaityou.jpg','description','2016','学園 ラブコメ','セブン'),(34,'おしえて! ギャル子ちゃん','oshietegalko.jpg','description','2016','学園 日常 コメディ','feel.'),(35,'おじさんとマシュマロ','ojisantomarshmallow.jpg','description','2016','コメディ','Creators in Pack'),(36,'OZMAFIA!!','ozmafia.jpg','description','2016','童話 マフィア 恋愛','クリエイターズインパック'),(37,'オトナの一休さん','otonanoikkyu.jpg','description','2016','ノンフィクション','unknown'),(38,'鬼斬','onigiri.jpg','description','2016','歴史','ぴえろプラス'),(39,'想いのかけら','unknown.jpg','description','2016','アニメ','福島ガイナックス'),(40,'Orange','orange.jpg','description','2016','SF、青春、恋愛漫画、学園漫画少女漫画、青年漫画','テレコム・アニメーションフィルム'),(41,'カードファイト!! ヴァンガードG ストライドゲート編','cardfightvangardg.jpg','description','2016','カードゲーム 学園 ファンタジー','トムス・エンタテインメントスタジオさきまくら（第1期第34話 - 第65話）'),(42,'カードファイト!! ヴァンガードG NEXT','cardfightvangardgnext.jpg','description','2016','カードゲーム 学園 ファンタジー','トムス・エンタテインメント スタジオさきまくら'),(43,'ガーリッシュ ナンバー','garlishnumber.jpg','description','2016','声優 青春','ディオメディア'),(44,'怪盗ジョーカー','kaitoujoker.jpg','description','2016','アクション','シンエイ動画'),(45,'学園ハンサム','gakuenhansamu.jpg','description','2016','ボーイズラブ コメディ','チーム欲求腐満'),(46,'学戦都市アスタリスク','gakusentoshiasterisk.jpg','description','2016','SF 学園 ラブコメ','A-1 Pictures'),(47,'影鰐-KAGEWANI-承','kagewanishou.jpg','description','2016','パニックサスペンス シリアス UMA SF','Tomovies'),(48,'彼女と彼女の猫 -Everything Flows-','kanojotokanojononeko.jpg','description','2016','日常','ライデンフィルム京都スタジオ'),(49,'神々の記','kamigaminoki.jpg','description','2016','エジプト神話','想通'),(50,'カミワザ・ワンダ','kamiwazawanda.jpg','description','2016','SF ファンタジー アドベンチャー ギャグ','トムス・エンタテインメント'),(51,'がんがんがんこちゃん','ganganganko.jpg','description','2016','人形劇','unknown'),(52,'赤髪の白雪姫','aka_shirayuki.jpg','description','2016','少女漫画 王宮ファンタジー','ボンズ'),(53,'Aiseki MOGOL GIRL','aisekimogolgirl.jpg','description','2017','アニメ','IKEAnimations'),(54,'ID-0','id_0.jpg','description','2017','SF ロボット','サンジゲン'),(55,'アイドル事変','idoljihen.jpg','description','2017','アイドル','MAPPA / VOLN'),(56,'アイドルタイムプリパラ','idoltimepripara.jpg','description','2017','アイドル ファッション 音楽','タツノコプロ、DONGWOO A&E'),(57,'アイドルマスター SideM','idolmastersidem.jpg','description','2017','男性アイドル','A-1 Pictures'),(58,'アイドルマスター シンデレラガールズ劇場','imascinderellagirlsgekijou.jpg','description','2017','アイドル','ギャザリング'),(59,'青の祓魔師 京都不浄王篇','aoekufujouou.jpg','description','2017','ダーク・ファンタジー バトルアクション','A-1 Pictures'),(60,'AKIBA\'S TRIP -THE ANIMATION-','akibastrip.jpg','description','2017','バトル','GONZO'),(61,'アキンド星のリトル・ペソ','akindolittlepeso.jpg','description','2017','アニメ','ファンワークスFEVER creations'),(62,'アクションヒロイン チアフルーツ','actionheroincheerfluits.jpg','description','2017','ローカルヒーロー','ディオメディア'),(63,'ACCA13区監察課','acca.jpg','description','2017','群像劇','マッドハウス'),(64,'アトム ザ・ビギニング','atomthebeginning.jpg','description','2017','SF','OLM、Production I.GSIGNAL.MD'),(65,'兄に付ける薬はない!','aninitukerukusuri.jpg','description','2017','コメディ','イマジニア、ファンワークスPlanet Cartoon（第3期）'),(66,'アニ×パラ〜あなたのヒーローは誰ですか〜','anipara.jpg','description','2017','ファミリー・一般向けアニメ SF ギャグ','unknown'),(67,'アニメガタリズ','animegataris.jpg','description','2017','アニメ 学園','ワオワールド'),(68,'アホガール','ahogirl.jpg','description','2017','学園、ギャグ、4コマ、少年漫画','ディオメディア'),(69,'雨色ココアシリーズ『あめこん!!』','amecon.jpg','description','2017','喫茶店 日常 コメディ','EMTスクエアード'),(70,'アリスと蔵六','alicetozouroku.jpg','description','2017','SF ファンタジー 青年向け 少年漫画 超能力','J.C.STAFF'),(71,'イケメン戦国◆時をかけるが恋は始まらない','ikemensengoku.jpg','description','2017','戦国 恋愛','トムス・ジーニーズトムス・エンタテインメント'),(72,'異世界食堂','isekaishokudou.jpg','description','2017','ファンタジー 料理 グルメ なろう系','SILVER LINK.'),(73,'異世界はスマートフォンとともに。','isekaihasmartphone.jpg','description','2017','異世界ファンタジー ハーレム なろう系','プロダクション リード'),(74,'いつだって僕らの恋は10センチだった。','bokuranokoiha10cm.jpg','description','2017','学園 恋愛','Lay-duce'),(75,'雨色ココア in Hawaii','ameirococoa.jpg','description','2016','喫茶店 日常 コメディ','EMTスクエアード'),(76,'いぬやしき','inuyashiki.jpg','description','2017','青年漫画 SF','MAPPA'),(77,'妹さえいればいい。','imoutosae.jpg','description','2017','青春ラブコメディ','SILVER LINK.'),(78,'Infini-T Force','infinitforce.jpg','description','2017','ヒーロー','タツノコプロデジタル・フロンティア'),(79,'Wake Up Girls! 新章','wakeupgirlsanother.jpg','description','2017','アイドル ヒューマンドラマ','Ordet×タツノコプロ'),(80,'有頂天家族2','utyoutenkazoku2.jpg','description','2017','コメディ 群像劇 ファンタジー','P.A.WORKS'),(81,'URAHARA','urahara.jpg','description','2017','SF','白組×EMTスクエアード'),(82,'うらら迷路帖','urarameirotyou.jpg','description','2017','占い','J.C.STAFF'),(83,'銀魂','gintama.jpg','宇宙の知的生物天人（あまんと）諸族によって開国を強要され、銀河文明が導入された江戸のかぶき町を主たる舞台とする物語である。','2011-2018','SF 時代劇 ギャグ','サンライズ'),(84,'18if','18if.jpg','description','2017','ファンタジー','GONZO'),(85,'EVIL OR LIVE','evilorlive.jpg','description','2017','学園','絵梦'),(86,'エルドライブ【elDLIVE】','eldrive.jpg','description','2017','バトル SF 宇宙 宇宙警察','studioぴえろ'),(87,'エロマンガ先生','eromangasensei.jpg','description','2017','ホームドラマ ラブコメ業界 ライトノベル','A-1 Pictures'),(88,'王様ゲーム The Animation','ousamagame.jpg','description','2017','ホラー 学園','セブン'),(89,'王室教師ハイネ','oushitukyoushiheine.jpg','description','2017','王室コメディ','ブリッジ'),(90,'OK K.O.! めざせヒーロー','okkomezasehero.jpg','description','2017','アニメ','カートゥーン・ネットワーク・スタジオサイエンスSARU'),(91,'お酒は夫婦になってから','osakehafuufuni.jpg','description','2017','コメディ グルメ','Creators in Pack'),(92,'おそ松さん','osomatsusan.jpg','description','2017','ギャグ ブラックコメディ','studioぴえろ'),(93,'オトッペ','otoppe.jpg','description','2017','帯番組 子供向け 教養','pH studio'),(94,'鬼平','onihei.jpg','description','2017','時代劇','スタジオM2'),(95,'おにゃんこポン','onyankopon.jpg','description','2017','ダンス','京風とまと'),(96,'お見合い相手は教え子、強気な、問題児。','omiaiaitehaoshiego.jpg','description','2017','ティーンズラブ','セブン'),(97,'俺たちゃ妖怪人間','oretatyayoukainingen.jpg','description','2017','ホラー','第一動画'),(98,'終物語','owarimonogatari.jpg','description','2017','青春 怪異小説','シャフト'),(99,'カードファイト!! ヴァンガードG Z','vangardgz.jpg','description','2017','カードゲーム 学園 ファンタジー','トムス・エンタテインメント スタジオさきまくら'),(100,'カイトアンサ','kaitoansa.jpg','description','2017','パズル','天狗工房'),(101,'ガヴリールドロップアウト','unknown.jpg','description','2017','学園、コメディ','動画工房'),(102,'CHAOS;CHILD','unknown.jpg','description','2017','SF、サスペンスホラー','SILVER LINK.'),(103,'賭ケグルイ','unknown.jpg','description','2017','学園、賭博','MAPPA'),(104,'活撃 刀剣乱舞','unknown.jpg','description','2017','育成シミュレーション','unknown'),(105,'カブキブ!','unknown.jpg','description','2017','歌舞伎、部活、青春','スタジオディーン'),(106,'Caribadix','unknown.jpg','description','2017','アニメ','ファンワークス'),(107,'牙狼-GARO- -VANISHING LINE-','unknown.jpg','description','2017','伝奇、ファンタジーヒーロー、アクション','MAPPA'),(108,'キノの旅 -the Beautiful World- the Animated Series','unknown.jpg','description','2017','ファンタジー','A.C.G.T'),(109,'キャッチーくんのナイスキャッチ!','unknown.jpg','description','2017','ショートアニメ+実写','DLE[1]'),(110,'境界のRINNE','unknown.jpg','description','2017','少年漫画、ファンタジー、ハートフルコメディバトル、オカルト、ラブコメディ','ブレインズ・ベース'),(111,'恐竜少女ガウ子','unknown.jpg','description','2017','アニメ','unknown'),(112,'キラキラ☆プリキュアアラモード','unknown.jpg','description','2017','変身ヒロイン、グルメ、動物、スイーツ戦闘美少女、女児向けアニメ','東映アニメーション'),(113,'銀魂.','unknown.jpg','description','2017','SF、時代劇、ギャグバトルアクション','サンライズ'),(114,'銀の墓守り','unknown.jpg','description','2017','オンラインゲーム異世界バトルファンタジー','絵梦'),(115,'クジラの子らは砂上に歌う','unknown.jpg','description','2017','SF、ファンタジー','J.C.STAFF'),(116,'クズの本懐','unknown.jpg','description','2017','恋愛','Lerche'),(117,'クライドとウィリス','unknown.jpg','description','2017','スラップスティック、喜劇、冒険','unknown'),(118,'クラシカロイド','unknown.jpg','description','2017','音楽、ギャグ[1]、SF','サンライズ（第1シリーズ）BNピクチャーズ（第2シリーズ）'),(119,'GLAMOROUS HEROES','unknown.jpg','description','2017','エレクトロニック・スポーツ','drop'),(120,'GRANBLUE FANTASY The Animation','unknown.jpg','description','2017','ファンタジー、アドベンチャー','A-1 Pictures'),(121,'クリオネの灯り','unknown.jpg','description','2017','アニメ','drop、京風とまと'),(122,'クロックワーク・プラネット','unknown.jpg','description','2017','ファンタジー、SF、ロボット','XEBEC'),(123,'ゲーマーズ!','unknown.jpg','description','2017','学園、ラブコメ','PINE JAM'),(124,'血界戦線 & BEYOND','unknown.jpg','description','2017','SF伝奇アクション、吸血鬼','ボンズ'),(125,'潔癖男子!青山くん','unknown.jpg','description','2017','青年漫画、サッカー学園、ギャグ','スタジオ雲雀'),(126,'けものフレンズ (アニメ)','unknown.jpg','description','2017','動物、萌え擬人化、冒険','unknown'),(127,'喧嘩番長 乙女 -Girl Beats Boys-','unknown.jpg','description','2017','不良、恋愛','project No.9×A-Real'),(128,'恋と嘘','unknown.jpg','description','2017','恋愛、学園漫画','ライデンフィルム'),(129,'Code:Realize 〜創世の姫君〜','unknown.jpg','description','2017','恋愛、スチームパンク','M.S.C'),(130,'この素晴らしい世界に祝福を!2','unknown.jpg','description','2017','異世界ファンタジー、コメディ[1]','スタジオディーン'),(131,'このはな綺譚','unknown.jpg','description','2017','異世界、ファンタジー、百合','Lerche'),(132,'小林さんちのメイドラゴン','unknown.jpg','description','2017','コメディ、ファンタジー、異種間交流','京都アニメーション'),(133,'怖いものはおもしろい','unknown.jpg','description','2017','アニメ','unknown'),(134,'コンビニカレシ','unknown.jpg','description','2017','青春、学園','studioぴえろ'),(135,'最遊記RELOAD BLAST','unknown.jpg','description','2017','西遊記 ファンタジー コメディ アドベンチャー','プラチナビジョン'),(136,'冴えない彼女の育てかた♭','unknown.jpg','description','2017','ラブコメディ','A-1 Pictures'),(137,'サクラクエスト','unknown.jpg','description','2017','観光','P.A.WORKS'),(138,'サクラダリセット','unknown.jpg','description','2017','ファンタジー、学園','david production'),(139,'札幌乙女ごはん。','unknown.jpg','description','2017','グルメ漫画','unknown'),(140,'THE REFLECTION','unknown.jpg','description','2017','バトルアクション、ヒーロー','スタジオディーン'),(141,'3月のライオン','unknown.jpg','description','2017','青春、将棋、青年漫画','シャフト'),(142,'時間の支配者','unknown.jpg','description','2017','ファンタジー','project No.9'),(143,'地獄少女 宵伽','unknown.jpg','description','2017','伝奇・ホラー ミステリー サスペンス','スタジオディーン'),(144,'シャイニングスター','unknown.jpg','description','2017','アイドル 学園 子供向けアニメ 少女向けアニメ','MARO STUDIO'),(145,'Just Because!','unknown.jpg','description','2017','恋愛、学園','PINE JAM'),(146,'SHADOW OF LAFFANDOR ラファンドール国物語 〜FANTASY PICTURE STORY〜','unknown.jpg','description','2017','ファンタジー','unknown'),(147,'十二大戦','unknown.jpg','description','2017','バトルロイヤル','グラフィニカ'),(148,'終末なにしてますか? 忙しいですか? 救ってもらっていいですか?','unknown.jpg','description','2017','コメディ、ファンタジー','サテライト×C2C'),(149,'Juratic','unknown.jpg','description','2017','アニメ','unknown'),(150,'将国のアルタイル','unknown.jpg','description','2017','ファンタジー','MAPPA'),(151,'少女終末旅行','unknown.jpg','description','2017','青年漫画、SF、ポストアポカリプス','WHITE FOX'),(152,'少年アシベ GO! GO! ゴマちゃん','unknown.jpg','description','2017','日常、コメディ','ライフワーク'),(153,'昭和元禄落語心中 -助六再び篇-','unknown.jpg','description','2017','人間ドラマ、落語','スタジオディーン'),(154,'食戟のソーマ 餐ノ皿','unknown.jpg','description','2017','料理・グルメ、学園','J.C.STAFF'),(155,'シルバニアファミリー ミニストーリー','unknown.jpg','description','2017','アニメ','unknown'),(156,'進撃の巨人 (アニメ)','unknown.jpg','description','2017','少年向け、ダークファンタジーアクション、風刺','WIT STUDIO（第1期 - 第3期）MAPPA（第4期）'),(157,'神撃のバハムート VIRGIN SOUL','unknown.jpg','description','2017','ファンタジー','MAPPA'),(158,'Sin 七つの大罪','unknown.jpg','description','2017','ダーク・ファンタジー','アニメーションスタジオ・アートランド[1] × ティー・エヌ・ケー'),(159,'SUPER LOVERS 2','unknown.jpg','description','2017','ボーイズラブ、ラブコメ、日常','スタジオディーン'),(160,'スカートの中はケダモノでした。','unknown.jpg','description','2017','ティーンズラブ','マジックバス'),(161,'スクールガールストライカーズ Animation Channel','unknown.jpg','description','2017','アニメ','unknown'),(162,'スタミュ','unknown.jpg','description','2017','学園、ミュージカル','C-Station'),(163,'スナックワールド','unknown.jpg','description','2017','冒険、ファンタジー','OLM Digital'),(164,'Spiritpact','unknown.jpg','description','2017','ファンタジー','韓国絵梦'),(165,'正解するカド','unknown.jpg','description','2017','SF','東映アニメーション'),(166,'セイレン (アニメ)','unknown.jpg','description','2017','学園、ラブコメ、青春、恋愛','Studio五組 × AXsiZ'),(167,'世界の闇図鑑','unknown.jpg','description','2017','ホラー･オカルト･SF･ＵＭA','ILCA'),(168,'ゼロから始める魔法の書','unknown.jpg','description','2017','ファンタジー','WHITE FOX'),(169,'戦姫絶唱シンフォギアAXZ','unknown.jpg','description','2017','SF、変身ヒロイン、戦闘美少女','サテライト[注 1]'),(170,'戦刻ナイトブラッド','unknown.jpg','description','2017','恋愛、ファンタジー','颱風グラフィックス'),(171,'戦隊ヒーロー スキヤキフォース','unknown.jpg','description','2017','戦隊ヒーロー','STUDIO4℃'),(172,'セントールの悩み','unknown.jpg','description','2017','学園、青春、日常、ファンタジー','絵梦'),(173,'僧侶と交わる色欲の夜に…','unknown.jpg','description','2017','ティーンズラブ','アニメーションスタジオ・セブン'),(174,'ソード・オラトリア ダンジョンに出会いを求めるのは間違っているだろうか外伝','unknown.jpg','description','2017','ファンタジー','unknown'),(175,'大正メビウスライン ちっちゃいさん','unknown.jpg','description','2017','ボーイズラブ','studio A-CAT'),(176,'DYNAMIC CHORD','unknown.jpg','description','2017','恋愛、音楽','studioぴえろ'),(177,'DIVE!!','unknown.jpg','description','2017','スポ根青春物','ゼロジー'),(178,'タイムボカン 逆襲の三悪人','unknown.jpg','description','2017','ロボット ギャグ','タツノコプロ'),(179,'ダックテイルズ','unknown.jpg','description','2017','アニメ','ディズニー・テレビジョン・アニメーションスニップル・アニメーションスタジオ'),(180,'探偵オペラ ミルキィホームズ アルセーヌ 華麗なる欲望','unknown.jpg','description','2017','ファンタジー、ギャグ','J.C.STAFF'),(181,'チェインクロニクル 〜ヘクセイタスの閃〜','unknown.jpg','description','2017','ファンタジー','テレコム・アニメーションフィルムグラフィニカ'),(182,'超耕21ガッター','unknown.jpg','description','2017','アニメ','Zinnia Works 一色美奈子'),(183,'超・少年探偵団NEO','unknown.jpg','description','2017','日常、ミステリ','ディー・エル・イー'),(184,'ちょぼらうにょぽみ劇場第三幕 あいまいみー 〜surgical friends〜','unknown.jpg','description','2017','ギャグ、4コマ漫画','セブン'),(185,'ちるらん にぶんの壱','unknown.jpg','description','2017','時代劇','ランドック・スタジオ'),(186,'ツインエンジェルBREAK','unknown.jpg','description','2017','怪盗、変身ヒロイン','ノーマッド'),(187,'つうかあ (アニメ)','unknown.jpg','description','2017','レーシングニーラー','SILVER LINK.'),(188,'月がきれい','unknown.jpg','description','2017','恋愛、青春、学園','feel.'),(189,'TSUKIPRO THE ANIMATION','unknown.jpg','description','2017','アイドル','ピー・アール・エー'),(190,'つぐもも','unknown.jpg','description','2017','妖怪退治ファンタジー、学園','ゼロジー'),(191,'徒然チルドレン','unknown.jpg','description','2017','4コマ漫画、学園、ラブコメ','Studio五組'),(192,'ディアホライゾン（被）','unknown.jpg','description','2017','冒険、ファンタジー','ファンワークス'),(193,'Dies irae (アニメ)','unknown.jpg','description','2017','学園、ファンタジー','ACGT'),(194,'テイルズ オブ ゼスティリア ザ クロス','unknown.jpg','description','2017','ファンタジー','ufotable'),(195,'てーきゅう','unknown.jpg','description','2017','テニス、ギャグ','MAPPA（第1期 - 第3期）ミルパンセ（第4期以降）'),(196,'亜人ちゃんは語りたい','unknown.jpg','description','2017','ファンタジー、ハーレムもの学園、コメディ','A-1 Pictures'),(197,'デュエル・マスターズ (アニメ)','unknown.jpg','description','2017','トレーディングカードゲーム','スタジオ雲雀'),(198,'天使の3P!','unknown.jpg','description','2017','ガールズバンド','project No.9'),(199,'トミカハイパーレスキュー ドライブヘッド 機動救急警察','unknown.jpg','description','2017','レスキューロボットアニメ','OLM'),(200,'ドリフェス!R','unknown.jpg','description','2017','アイドル','BN Pictures'),(201,'アーヤと魔女','NULL','ダイアナ・ウィン・ジョーンズによるファンタジー小説、またそれを原作としたスタジオジブリ制作のアニメーション作品。','2020','ファンタジー','スタジオジブリ'),(202,'朝だよ！貝社員','kaishain.jpg','description','2016','アニメ','unknown'),(203,'PSYCHO-PASS サイコパス 3','psychopass3.jpg','Production I.G制作による日本のオリジナルテレビアニメ作品、および、これを原作としたメディアミックス作品。','2019秋','SF アクション クライムサスペンス','ProductionI.G'),(204,'亜人','ajin.jpg','description','2016','アクション','ポリゴン・ピクチュアズ'),(205,'呪術廻戦','jujutukaisen.jpg','人間の負の感情から生まれる化け物・呪霊を呪術を使って祓う呪術師の闘いを描いた、ダークファンタジー・バトル漫画。','2020秋','ダーク・ファンタジー','MAPPA'),(206,'エンドライド','endride.jpg','description','2016','ハイ・ファンタジー','ブレインズ・ベースラパントラック'),(207,'ノラと皇女と野良猫ハート','noratokoujoto.jpg','日本のアダルトゲームブランドであるHARUKAZEより2016年2月26日に発売された成人向け美少女ゲーム原作。地上世界に住むごく普通の少年・ノラが、冥界の皇女・パトリシアの魔法によって猫の姿にされてしまうというファンタジー作品。','2017夏','恋愛 学園 ファンタジー','ダブトゥーンスタジオ'),(208,'アグレッシブ烈子','aggressiveretsuko.jpg','一流商社でOLとして働くレッサーパンダ・烈子の楽しみは、仕事帰りの一人カラオケ。デスボイスでメタルを歌って、仕事のストレスを思い切り発散するの!','2016','アニメ','unknown'),(209,'うたの☆プリンスさまっ♪ マジLOVEレジェンドスター','utanoprincesama.jpg','description','2016','恋愛','A-1 Pictures'),(210,'うさかめ','usakame.jpg','description','2016','テニス ギャグ','MAPPA（第1期 - 第3期）ミルパンセ（第4期以降）'),(211,'イナズマデリバリー','inazmadelivery.jpg','description','2016','コメディ','カナバングラフィックス');
-/*!40000 ALTER TABLE `anime_data` ENABLE KEYS */;
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
-DROP TABLE IF EXISTS `likeunlike`;
-CREATE TABLE `likeunlike` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL,
-  `anime_id` int(11) NOT NULL,
-  `status` int(11) NOT NULL,
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
-LOCK TABLES `likeunlike` WRITE;
-/*!40000 ALTER TABLE `likeunlike` DISABLE KEYS */;
-INSERT INTO `likeunlike` VALUES (1,1,1,0,'2021-03-19 22:48:57','2021-03-19 22:49:36'),(2,1,2,2,'2021-03-19 22:48:57','2021-03-19 22:49:36'),(3,1,3,1,'2021-03-19 22:48:57','2021-03-19 22:49:36'),(4,2,2,1,'2021-03-19 22:48:57','2021-03-19 22:49:36'),(5,2,1,1,'2021-03-19 22:48:57','2021-03-19 22:49:36');
-/*!40000 ALTER TABLE `likeunlike` ENABLE KEYS */;
-UNLOCK TABLES;
-
-DROP TABLE IF EXISTS `recommended`;
-CREATE TABLE `recommended` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL,
-  `anime_id` int(11) NOT NULL,
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-LOCK TABLES `recommended` WRITE;
-/*!40000 ALTER TABLE `recommended` DISABLE KEYS */;
-INSERT INTO `recommended` VALUES (1,1,3,'2021-03-20 16:36:02','2021-03-20 16:36:02'),(2,1,2,'2021-03-20 16:36:16','2021-03-20 16:36:16'),(3,1,5,'2021-03-20 16:36:22','2021-03-20 16:36:22'),(4,2,2,'2021-03-20 16:36:25','2021-03-20 16:36:25'),(5,2,7,'2021-03-20 16:36:29','2021-03-20 16:36:29');
-/*!40000 ALTER TABLE `recommended` ENABLE KEYS */;
-UNLOCK TABLES;
+-- Dump completed on 2021-09-25 22:11:33

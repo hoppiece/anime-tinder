@@ -3,8 +3,8 @@ import colors from 'vuetify/es5/util/colors'
 export default {
   // Environment variable
   publicRuntimeConfig: {
-    appURL: process.env.APP_URL || 'http://127.0.0.1:3000',
-    serverURL: process.env.SERVER_URL || 'http://127.0.0.1:5000',
+    appURL: process.env.VUE_APP_APP_URL || 'http://127.0.0.1:3000',
+    serverURL: process.env.VUE_APP_SERVER_URL || 'http://127.0.0.1:5000',
   },
 
   privateRuntimeConfig: {

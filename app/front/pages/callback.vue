@@ -32,6 +32,7 @@ export default {
       this.loading = false;
       this.$router.push('/');
     }).catch(err => {
+      console.log(err)
     });
   },
 };

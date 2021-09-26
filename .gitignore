@@ -138,3 +138,5 @@ collecting_content/download
 src/figures
 .env.prod
 sync_dir.sh
+
+.vercel

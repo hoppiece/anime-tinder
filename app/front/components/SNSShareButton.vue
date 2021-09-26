@@ -75,22 +75,22 @@
 
     methods: {
       share(sns) {
-        const shareUrl = "https://example.com"
+        const shareUrl = this.$config.appURL + this.$route.path
+        console.log(shareUrl)
         let href = ""
         switch( sns ) {
           case 'twitter':
-              // href = `https://twitter.com/intent/tweet?url=${shareUrl}&hashtags=`+this.hashtag+`&text=`+this.text
-              href = `https://twitter.com/intent/tweet?hashtags=`+this.hashtag+`&text=`+this.text1+this.title+this.text2
+              href = `https://twitter.com/intent/tweet?hashtags=`+this.hashtag+`&text=`+this.text1+this.title+this.text2+`&url=`+shareUrl
+              // href = `https://twitter.com/intent/tweet?hashtags=`+this.hashtag+`&text=`+this.text1+this.title+this.text2
               break
           case 'facebook':
-              // href = `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`
               href = `https://www.facebook.com/sharer/sharer.php`
               break
           case 'line':
               href = `https://line.me/R/msg/text/?`+this.text1+this.title+this.text2
               break
           case 'hatena':
-              // href = `http://b.hatena.ne.jp/add?&url=${shareUrl}`
+              // href = `http://b.hatena.ne.jp/add?&url=`+shareUrl
               href = `http://b.hatena.ne.jp/add`
               break
         }

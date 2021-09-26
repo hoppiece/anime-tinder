@@ -103,6 +103,7 @@ celerybeat.pid
 
 # Environments
 .env
+.env.prod
 .venv
 env/
 venv/
@@ -135,5 +136,7 @@ mysql/mysql_data/
 app/front.nuxt/
 collecting_content/download
 src/figures
+.env.prod
+sync_dir.sh
 
 .vercel
